@@ -324,7 +324,12 @@
           thumbBtns.forEach(function (b, bi) {
             b.setAttribute('aria-current', bi === index ? 'true' : 'false');
           });
-          thumbBtns[index].scrollIntoView({ block: 'nearest', inline: 'center' });
+          // Keep the active thumb centered by scrolling ONLY the thumb strip
+          // horizontally (never scrollIntoView, which would move the whole page).
+          var activeThumb = thumbBtns[index];
+          var cRect = thumbs.getBoundingClientRect();
+          var bRect = activeThumb.getBoundingClientRect();
+          thumbs.scrollLeft += (bRect.left - cRect.left) - (thumbs.clientWidth - activeThumb.clientWidth) / 2;
         }
 
         if (files.length <= 1) {
