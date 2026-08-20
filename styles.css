@@ -263,7 +263,7 @@ a { color: var(--rose); }
 
 /* ===== IN THE SPOTLIGHT ===== */
 .spotlight { background: radial-gradient(900px 420px at 15% 0%, rgba(47, 143, 102, 0.16), transparent 58%); }
-.spotlight__wrap { max-width: 1160px; }
+.spotlight__wrap { max-width: 1220px; }
 .spotlight__intro { margin-bottom: 30px; }
 
 .spotlight__grid {
@@ -272,8 +272,10 @@ a { color: var(--rose); }
   gap: 22px;
   align-items: stretch;            /* all tiles the same height */
 }
-@media (min-width: 920px) {
-  .spotlight__grid { grid-template-columns: repeat(3, 1fr); }  /* single row of three */
+/* Only go 3-across when each column comfortably clears the Instagram
+   embed's ~326px minimum width; minmax(0,1fr) keeps all three equal. */
+@media (min-width: 1200px) {
+  .spotlight__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .spotlight__card {
