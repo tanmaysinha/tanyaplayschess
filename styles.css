@@ -261,8 +261,75 @@ a { color: var(--rose); }
   font-style: italic;
 }
 
-/* ===== LEMONADE ===== */
-.lemonade { background: radial-gradient(900px 420px at 15% 0%, rgba(47, 143, 102, 0.16), transparent 58%); }
+/* ===== IN THE SPOTLIGHT ===== */
+.spotlight { background: radial-gradient(900px 420px at 15% 0%, rgba(47, 143, 102, 0.16), transparent 58%); }
+.spotlight__wrap { max-width: 1160px; }
+.spotlight__intro { margin-bottom: 30px; }
+
+.spotlight__grid {
+  display: grid;
+  grid-template-columns: 1fr;      /* stacked on small screens */
+  gap: 22px;
+  align-items: stretch;            /* all tiles the same height */
+}
+@media (min-width: 920px) {
+  .spotlight__grid { grid-template-columns: repeat(3, 1fr); }  /* single row of three */
+}
+
+.spotlight__card {
+  height: 100%;                    /* fill the equal-height grid cell */
+  background: #fff;
+  border: 1px solid var(--cream-2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* uniform media area across all three tiles */
+.spotlight__card-img,
+.spotlight__card--ig .featured__embed {
+  width: 100%;
+  height: 300px;
+  flex: none;
+}
+
+.spotlight__card-img {
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid #fff;
+  outline: 2px solid var(--green);
+  background: var(--cream-2);
+  display: block;
+}
+.spotlight__card-img--top { object-position: top; }
+
+.spotlight__title { font-size: clamp(20px, 2.2vw, 25px); color: var(--green-deep); margin: 0; }
+.spotlight__card p { color: var(--ink-soft); font-size: 15px; margin: 0; }
+.spotlight__link { margin-top: auto; }
+.spotlight__note { font-size: 13px; font-style: italic; color: var(--ink-soft); margin: 0; }
+
+/* Instagram card: embed fills the same 300px media area (full post via the link) */
+.spotlight__card--ig .featured__embed {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px -20px rgba(18, 40, 30, 0.4);
+}
+.spotlight__card--ig .featured__embed .instagram-media { box-shadow: none !important; }
+/* soft fade so the height-crop reads as intentional */
+.spotlight__card--ig .featured__embed::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 64px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+  pointer-events: none;
+}
 
 .lemonade__card {
   display: grid;
@@ -426,6 +493,13 @@ blockquote {
   border-radius: 6px;
   font-size: 0.9em;
 }
+
+/* ===== FEATURED (Instagram) ===== */
+.featured { background: linear-gradient(180deg, rgba(211, 233, 219, 0.5), rgba(255, 255, 255, 0.3)); }
+.featured__wrap { max-width: 620px; text-align: center; }
+.featured__intro { margin-bottom: 26px; }
+.featured__embed { display: flex; justify-content: center; }
+.featured__btn { margin-top: 22px; }
 
 /* ===== CONTACT ===== */
 .contact {

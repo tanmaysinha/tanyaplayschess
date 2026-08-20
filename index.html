@@ -103,34 +103,61 @@
       </div>
     </section>
 
-    <!-- ===== LEMONADE STAND ===== -->
-    <section class="section lemonade" id="lemonade">
-      <div class="wrap">
-        <h2><span class="kicker">This Summer</span>Chess &amp; lemonade on Elfreth's Alley</h2>
-        <div class="lemonade__card">
-          <img class="lemonade__photo" src="images/gallery/Photo%2008.jpg" alt="Tanya at her lemonade and chess stand on Elfreth's Alley" loading="lazy" />
-          <div class="lemonade__text">
-            <p class="lede">
-              Around the <strong>Fourth of July</strong>, Tanya set up her
-              <strong>“Queens Supporting Queens”</strong> lemonade stand on historic
-              <strong>Elfreth's Alley</strong>, joined by her friend <strong>Naomi</strong> — but this
-              was no ordinary stand.
-            </p>
+    <!-- ===== IN THE SPOTLIGHT ===== -->
+    <section class="section spotlight" id="spotlight">
+      <div class="wrap spotlight__wrap">
+        <h2><span class="kicker">Highlights</span>In the Spotlight</h2>
+        <p class="lede spotlight__intro">Tanya's summer of chess — and the moments it sparked.</p>
+
+        <div class="spotlight__grid">
+
+          <!-- 1. Lemonade stand -->
+          <div class="spotlight__card">
+            <img class="spotlight__card-img" src="images/gallery/Photo%2008.jpg" alt="Tanya at her lemonade and chess stand on Elfreth's Alley" loading="lazy" />
+            <h3 class="spotlight__title">Chess &amp; lemonade on Elfreth's Alley</h3>
             <p>
-              She invited passing tourists to sit down and <strong>play a game of chess</strong> with
-              her. It was also around the time of the <strong>FIFA World Cup in Philadelphia</strong>,
-              so she got to meet and play with <strong>soccer fans from all across the world</strong>.
-              Tanya happily taught the ones who were just learning how the pieces move.
+              Around the Fourth of July, Tanya and her friend <strong>Naomi</strong> ran a
+              “Queens Supporting Queens” hydration stand — playing chess with World Cup visitors
+              from around the world and raising <strong>$123</strong> for her chess club.
             </p>
-            <p>
-              She raised <strong>$123</strong>, and gave every dollar to her school's
-              <strong>McCall Chess Club</strong>. Her favorite part wasn't the money, though — it was
-              meeting new people, playing, and sharing the game she loves.
-            </p>
-            <blockquote>
-              “I want to encourage more girls to play chess.”
-            </blockquote>
           </div>
+
+          <!-- 2. Chess Life Kids article -->
+          <div class="spotlight__card">
+            <img class="spotlight__card-img spotlight__card-img--top" src="images/chess-life-kids.jpg" alt="Tanya's article &quot;Cooling Off With Chess&quot; in the August 2026 issue of Chess Life Kids magazine" loading="lazy" />
+            <h3 class="spotlight__title">Published in Chess Life Kids</h3>
+            <p>
+              Tanya wrote <strong>“Cooling Off With Chess”</strong> for the August 2026 issue of
+              <strong>Chess Life Kids</strong> magazine.
+            </p>
+            <a class="btn btn--primary spotlight__link" href="https://new.uschess.org/chess-life-kids-magazine-issues" target="_blank" rel="noopener noreferrer">
+              Browse issues →
+            </a>
+            <p class="spotlight__note">Full issue requires a US Chess membership.</p>
+          </div>
+
+          <!-- 3. Featured on Instagram -->
+          <div class="spotlight__card spotlight__card--ig">
+            <div class="featured__embed">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/p/DbDoGFJGs99/"
+                data-instgrm-version="14"
+                style="background:#fff; border:0; border-radius:16px; box-shadow:0 18px 40px -20px rgba(18,40,30,0.4); margin:0 auto; max-width:540px; min-width:250px; width:100%; padding:0;">
+                <a href="https://www.instagram.com/p/DbDoGFJGs99/" target="_blank" rel="noopener noreferrer">
+                  View this post on Instagram
+                </a>
+              </blockquote>
+            </div>
+            <h3 class="spotlight__title">Featured on Instagram</h3>
+            <p>
+              The <strong>International Chess Federation (<a href="https://www.fide.com/" target="_blank" rel="noopener noreferrer">FIDE</a>)</strong>
+              featured Tanya on their Instagram.
+            </p>
+            <a class="btn btn--primary spotlight__link" href="https://www.instagram.com/p/DbDoGFJGs99/" target="_blank" rel="noopener noreferrer">
+              📸 View the post
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
@@ -201,7 +228,6 @@
         </p>
       </div>
     </section>
-
 
     <!-- ===== CONTACT ===== -->
     <section class="section contact" id="contact">
@@ -378,6 +404,9 @@
       discover().then(build);
     })();
   </script>
+
+  <!-- Instagram embed renderer -->
+  <script async src="https://www.instagram.com/embed.js"></script>
 
 </body>
 </html>
