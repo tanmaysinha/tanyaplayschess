@@ -212,6 +212,39 @@ a { color: var(--rose); }
   margin-bottom: 8px;
 }
 
+/* ===== WHAT'S NEXT (upcoming event) ===== */
+.whatsnext { background: linear-gradient(160deg, var(--green-soft), #fff); }
+.whatsnext__wrap { max-width: 840px; text-align: center; }
+.whatsnext__title { font-size: clamp(28px, 4.5vw, 42px); font-weight: 900; color: var(--green-deep); margin-bottom: 14px; }
+.whatsnext__lede { margin: 0 auto 30px; max-width: 40ch; }
+
+.whatsnext__details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 700px) {
+  .whatsnext__details { grid-template-columns: repeat(3, 1fr); }
+}
+
+.whatsnext__item {
+  background: #fff;
+  border: 1px solid var(--cream-2);
+  border-top: 4px solid var(--green);
+  border-radius: 16px;
+  padding: 22px 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.whatsnext__icon { font-size: 30px; line-height: 1; }
+.whatsnext__label { text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; font-weight: 800; color: var(--green); }
+.whatsnext__item strong { font-size: 17px; color: var(--ink); }
+.whatsnext__sub { font-size: 14px; color: var(--ink-soft); }
+.whatsnext__cal { margin-top: 28px; }
+
 .lede {
   font-size: clamp(18px, 2.3vw, 21px);
   color: var(--ink);

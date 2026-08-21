@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//tanyaplayschess.com//What's Next//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:chess-with-tanya-2026-09-20@tanyaplayschess.com
+DTSTAMP:20260820T000000Z
+DTSTART:20260920T140000Z
+DTEND:20260920T160000Z
+SUMMARY:Come play chess with Tanya
+LOCATION:Dolley Ottey Park, Elfreth's Alley, Old City, Philadelphia, PA
+DESCRIPTION:Tanya will be out playing chess with anyone who'd like to join. Stop by for a game or two - all ages and levels welcome! https://tanyaplayschess.com
+URL:https://tanyaplayschess.com
+END:VEVENT
+END:VCALENDAR
