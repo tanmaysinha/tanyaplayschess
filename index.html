@@ -430,6 +430,20 @@
       var fallback = document.getElementById('featuredFallback');
       if (!embed || !fallback) return;
 
+      function useFallback() {
+        embed.style.display = 'none';
+        fallback.hidden = false;
+      }
+
+      // Firefox blocks Instagram's embed media (Total Cookie Protection), and it
+      // renders a tall-but-blank iframe that a height check can't distinguish —
+      // so use the thumbnail fallback in Firefox directly.
+      if (/firefox/i.test(navigator.userAgent)) {
+        useFallback();
+        return;
+      }
+
+      // Other browsers: keep the live embed, but fall back if it never renders.
       var decided = false;
       function embedIsAlive() {
         var f = embed.querySelector('iframe');
@@ -437,12 +451,8 @@
       }
       function check(isFinal) {
         if (decided) return;
-        if (embedIsAlive()) { decided = true; return; }   // embed rendered — keep it
-        if (isFinal) {                                     // still collapsed — use fallback
-          decided = true;
-          embed.style.display = 'none';
-          fallback.hidden = false;
-        }
+        if (embedIsAlive()) { decided = true; return; }
+        if (isFinal) { decided = true; useFallback(); }
       }
       setTimeout(function () { check(false); }, 2500);
       setTimeout(function () { check(false); }, 4000);
