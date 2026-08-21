@@ -161,6 +161,15 @@
           </blockquote>
         </div>
 
+        <!-- Fallback shown only if the embed fails to load (e.g. Firefox's
+             third-party cookie blocking). Toggled by JS at the bottom. -->
+        <a class="featured__fallback" id="featuredFallback"
+           href="https://www.instagram.com/p/DbDoGFJGs99/" target="_blank" rel="noopener noreferrer" hidden>
+          <img src="images/gallery/Photo%2008.jpg"
+               alt="Tanya at her chess and lemonade stand — the moment FIDE shared on Instagram" loading="lazy" />
+          <span class="featured__fallback-cap">📸 See FIDE's post on Instagram →</span>
+        </a>
+
         <a class="btn btn--primary featured__btn" href="https://www.instagram.com/p/DbDoGFJGs99/" target="_blank" rel="noopener noreferrer">
           📸 View the post on Instagram
         </a>
@@ -412,6 +421,34 @@
 
   <!-- Instagram embed renderer -->
   <script async src="https://www.instagram.com/embed.js"></script>
+
+  <!-- If the Instagram embed can't load (e.g. Firefox blocks its third-party
+       cookies) the iframe stays collapsed — swap in the thumbnail fallback. -->
+  <script>
+    (function () {
+      var embed = document.querySelector('#featured .featured__embed');
+      var fallback = document.getElementById('featuredFallback');
+      if (!embed || !fallback) return;
+
+      var decided = false;
+      function embedIsAlive() {
+        var f = embed.querySelector('iframe');
+        return f && f.getBoundingClientRect().height > 120;
+      }
+      function check(isFinal) {
+        if (decided) return;
+        if (embedIsAlive()) { decided = true; return; }   // embed rendered — keep it
+        if (isFinal) {                                     // still collapsed — use fallback
+          decided = true;
+          embed.style.display = 'none';
+          fallback.hidden = false;
+        }
+      }
+      setTimeout(function () { check(false); }, 2500);
+      setTimeout(function () { check(false); }, 4000);
+      setTimeout(function () { check(true); }, 6000);
+    })();
+  </script>
 
 </body>
 </html>
