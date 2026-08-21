@@ -319,8 +319,16 @@ a { color: var(--rose); }
 .spotlight__card--ig .featured__embed {
   position: relative;
   overflow: hidden;
+  align-items: flex-start;   /* don't vertically squish the embed */
   border-radius: 16px;
   box-shadow: 0 18px 40px -20px rgba(18, 40, 30, 0.4);
+}
+/* Let the embed render at its natural height, then clip to the 300px tile.
+   Without this the iframe is locked to 300px and Instagram renders blank. */
+.spotlight__card--ig .featured__embed iframe {
+  height: 540px !important;
+  min-height: 540px !important;
+  max-width: 100%;
 }
 .spotlight__card--ig .featured__embed .instagram-media { box-shadow: none !important; }
 /* soft fade so the height-crop reads as intentional */
