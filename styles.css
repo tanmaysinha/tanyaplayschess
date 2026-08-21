@@ -476,7 +476,7 @@ blockquote {
 .featured { background: linear-gradient(180deg, rgba(211, 233, 219, 0.5), rgba(255, 255, 255, 0.3)); }
 .featured__wrap { max-width: 620px; text-align: center; }
 .featured__intro { margin-bottom: 26px; }
-.featured__embed { display: flex; justify-content: center; }
+.featured__embed { max-width: 540px; margin: 0 auto; }
 .featured__btn { margin-top: 22px; }
 
 /* ===== CONTACT ===== */
