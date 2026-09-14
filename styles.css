@@ -296,17 +296,20 @@ a { color: var(--rose); }
 
 /* ===== IN THE SPOTLIGHT ===== */
 .spotlight { background: radial-gradient(900px 420px at 15% 0%, rgba(47, 143, 102, 0.16), transparent 58%); }
-.spotlight__wrap { max-width: 880px; }
+.spotlight__wrap { max-width: 1120px; }
 .spotlight__intro { margin-bottom: 30px; }
 
 .spotlight__grid {
   display: grid;
   grid-template-columns: 1fr;      /* stacked on small screens */
   gap: 22px;
-  align-items: stretch;            /* both tiles the same height */
+  align-items: stretch;            /* all tiles the same height */
 }
-@media (min-width: 720px) {
+@media (min-width: 640px) {
   .spotlight__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 900px) {
+  .spotlight__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .spotlight__card {
@@ -336,6 +339,8 @@ a { color: var(--rose); }
   display: block;
 }
 .spotlight__card-img--top { object-position: top; }
+/* 16:9 news still — keep Tanya and the CBS logo in frame when cropped */
+.spotlight__card-img--cbs { object-position: 15% center; }
 
 .spotlight__title { font-size: clamp(20px, 2.2vw, 25px); color: var(--green-deep); margin: 0; }
 .spotlight__card p { color: var(--ink-soft); font-size: 15px; margin: 0; }
