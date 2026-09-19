@@ -584,6 +584,7 @@ blockquote {
 .donate__title { font-size: clamp(28px, 4.5vw, 44px); font-weight: 900; margin-bottom: 18px; }
 .donate__text { color: #d6e8de; font-size: 18px; margin-bottom: 30px; }
 .donate__text strong { color: #fff; }
+.donate__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
 .donate__note { color: #a9c7ba; font-size: 14px; margin-top: 14px; }
 
 /* ===== FOOTER ===== */

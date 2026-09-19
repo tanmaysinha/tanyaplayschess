@@ -51,5 +51,6 @@ Any static host works (GitHub Pages, Netlify, Vercel). For GitHub Pages, enable
 Pages on the `main` branch in the repo settings.
 
 ## Support
-The site links to Philadelphia After School Activities Partnerships (ASAP):
-https://phillyasap.org/donate/
+The site offers two donation options:
+- Philadelphia After School Activities Partnerships (ASAP): https://phillyasap.org/donate/
+- US Chess: https://new.uschess.org/form/donate
